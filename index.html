@@ -173,10 +173,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-06 19:06:50 / Modified: 20:29:23" itemprop="dateCreated datePublished" datetime="2022-11-06T19:06:50+08:00">2022-11-06</time>
+              <time title="Created: 2022-11-06 19:06:50" itemprop="dateCreated datePublished" datetime="2022-11-06T19:06:50+08:00">2022-11-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-15 11:06:01" itemprop="dateModified" datetime="2022-11-15T11:06:01+08:00">2022-11-15</time>
+              </span>
 
           
 
@@ -189,15 +195,46 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1.安装node.js"></a>1.安装node.js</h3><h3 id="2-安装hexo-cli"><a href="#2-安装hexo-cli" class="headerlink" title="2.安装hexo-cli"></a>2.安装hexo-cli</h3><h3 id="3-hexo-init"><a href="#3-hexo-init" class="headerlink" title="3.hexo init"></a>3.hexo init</h3><h6 id="报错WARN-git-clone-failed-Copying-data-instead"><a href="#报错WARN-git-clone-failed-Copying-data-instead" class="headerlink" title="报错WARN git clone failed. Copying data instead"></a>报错WARN git clone failed. Copying data instead</h6><p>网络连接问题，重新尝试或者挂梯子，或者把github改成gitee，或者可以尝试手动复制在通过cnpm install下载依赖</p>
-<h6 id="报错端口占用"><a href="#报错端口占用" class="headerlink" title="报错端口占用"></a>报错端口占用</h6><p>执行hexo server -p 4321 修改成一个可用的端口即可，当前网站部署在<a target="_blank" rel="noopener" href="http://localhost:4321/">http://localhost:4321</a> 处。（临时改变）</p>
-<h3 id="4-新建文档"><a href="#4-新建文档" class="headerlink" title="4.新建文档"></a>4.新建文档</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;new file name&quot;  n--&gt;new</span><br></pre></td></tr></table></figure>
+          <h3 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1.安装node.js"></a>1.安装node.js</h3><h4 id="最好通过nvm来完成不同版本的兼容与管理"><a href="#最好通过nvm来完成不同版本的兼容与管理" class="headerlink" title="最好通过nvm来完成不同版本的兼容与管理"></a>最好通过nvm来完成不同版本的兼容与管理</h4><p>比如gulp v3.9使用的node版本号需要小于等于v12；</p>
+<p>而gulp v4.0+使用的node版本号需要大于v12；</p>
+<p>可以通过nvm命令实现node版本的切换</p>
+<h6 id="a-检查当前node的版本号（版本前带星号的就是当前使用的node版本）"><a href="#a-检查当前node的版本号（版本前带星号的就是当前使用的node版本）" class="headerlink" title="a.检查当前node的版本号（版本前带星号的就是当前使用的node版本）"></a>a.检查当前node的版本号（版本前带星号的就是当前使用的node版本）</h6><p>所有的node版本会保留在nvm的文件夹中</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm list</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server (run the server)</span><br></pre></td></tr></table></figure>
+<h5 id=""><a href="#" class="headerlink" title=""></a><img src="C:\Users\lyx\AppData\Roaming\Typora\typora-user-images\image-20221115104133511.png" alt="image-20221115104133511"></h5><h6 id="b-寻找可以下载的node版本号"><a href="#b-寻找可以下载的node版本号" class="headerlink" title="b.寻找可以下载的node版本号"></a>b.寻找可以下载的node版本号</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm list available</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+<h6 id="c-检查当前npm的版本号"><a href="#c-检查当前npm的版本号" class="headerlink" title="c.检查当前npm的版本号"></a>c.检查当前npm的版本号</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install --version</span><br></pre></td></tr></table></figure>
 
-<h3 id="5-远程部署到github"><a href="#5-远程部署到github" class="headerlink" title="5.远程部署到github"></a>5.远程部署到github</h3><h5 id="err-Error-Spawn-failed"><a href="#err-Error-Spawn-failed" class="headerlink" title="err: Error: Spawn failed"></a>err: Error: Spawn failed</h5>
+<h6 id="d-使用nvm进行版本管理"><a href="#d-使用nvm进行版本管理" class="headerlink" title="d.使用nvm进行版本管理"></a>d.使用nvm进行版本管理</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm use --version</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-安装hexo-cli"><a href="#2-安装hexo-cli" class="headerlink" title="2.安装hexo-cli"></a>2.安装hexo-cli</h3><h4 id="切换npm镜像源使用cnpm进行软件包的下载"><a href="#切换npm镜像源使用cnpm进行软件包的下载" class="headerlink" title="切换npm镜像源使用cnpm进行软件包的下载"></a>切换npm镜像源使用cnpm进行软件包的下载</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-hexo-init"><a href="#3-hexo-init" class="headerlink" title="3.hexo init"></a>3.hexo init</h3><h4 id="关键步骤：初始化hexo"><a href="#关键步骤：初始化hexo" class="headerlink" title="关键步骤：初始化hexo"></a>关键步骤：初始化hexo</h4><h6 id="a-报错WARN-git-clone-failed-Copying-data-instead"><a href="#a-报错WARN-git-clone-failed-Copying-data-instead" class="headerlink" title="a.报错WARN git clone failed. Copying data instead"></a>a.报错WARN git clone failed. Copying data instead</h6><p>网络连接问题，重新尝试或者挂梯子，或者把github改成gitee，或者可以尝试手动复制在通过cnpm install下载依赖</p>
+<h6 id="b-报错端口占用"><a href="#b-报错端口占用" class="headerlink" title="b.报错端口占用"></a>b.报错端口占用</h6><p>执行hexo server -p 4321 修改成一个可用的端口即可，当前网站部署在<a target="_blank" rel="noopener" href="http://localhost:4321/">http://localhost:4321</a> 处。（临时改变）</p>
+<h3 id="4-新建文档"><a href="#4-新建文档" class="headerlink" title="4.新建文档"></a>4.新建文档</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &#x27;new file name&#x27;  </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server		<span class="comment">#hexo server -p &#x27;port&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate	<span class="comment">#hexo g</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy		<span class="comment">#hexo d</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-远程部署到github"><a href="#5-远程部署到github" class="headerlink" title="5.远程部署到github"></a>5.远程部署到github</h3><h4 id="新建repository-命名"><a href="#新建repository-命名" class="headerlink" title="新建repository,命名:"></a>新建repository,命名:</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;st0rmshadowww.github.io&#x27;</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改-config-yml配置"><a href="#修改-config-yml配置" class="headerlink" title="修改_config.yml配置"></a>修改_config.yml配置</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:st0rmshadowww/st0rmshadowww.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="repo的配置来自github仓库中的Quick-setup中的链接，可以使用HTTPS也可以使用SSH，使用SSH的话需要生成非对称密钥，步骤如下："><a href="#repo的配置来自github仓库中的Quick-setup中的链接，可以使用HTTPS也可以使用SSH，使用SSH的话需要生成非对称密钥，步骤如下：" class="headerlink" title="repo的配置来自github仓库中的Quick setup中的链接，可以使用HTTPS也可以使用SSH，使用SSH的话需要生成非对称密钥，步骤如下："></a>repo的配置来自github仓库中的Quick setup中的链接，可以使用HTTPS也可以使用SSH，使用SSH的话需要生成非对称密钥，步骤如下：</h4><h6 id="a-初始化配置"><a href="#a-初始化配置" class="headerlink" title="a.初始化配置"></a>a.初始化配置</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;</span><br><span class="line">git config --global user.email  &quot;github-email&quot;</span><br></pre></td></tr></table></figure>
+
+<h6 id="b-查看SSH-Key是否存在，路径为"><a href="#b-查看SSH-Key是否存在，路径为" class="headerlink" title="b.查看SSH Key是否存在，路径为:"></a>b.查看SSH Key是否存在，路径为:</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\&#x27;username&#x27;\.ssh</span><br></pre></td></tr></table></figure>
+
+<h6 id="如果其中存在id-rsa和对应的公钥id-rsa-pub-则说明已经生成；"><a href="#如果其中存在id-rsa和对应的公钥id-rsa-pub-则说明已经生成；" class="headerlink" title="如果其中存在id_rsa和对应的公钥id_rsa.pub,则说明已经生成；"></a>如果其中存在id_rsa和对应的公钥id_rsa.pub,则说明已经生成；</h6><h6 id="如果未生成，使用命令："><a href="#如果未生成，使用命令：" class="headerlink" title="如果未生成，使用命令："></a>如果未生成，使用命令：</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;github-email&quot;</span><br></pre></td></tr></table></figure>
+
+<h6 id="c-将生成的公钥文件上传到github"><a href="#c-将生成的公钥文件上传到github" class="headerlink" title="c.将生成的公钥文件上传到github"></a>c.将生成的公钥文件上传到github</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setting--&gt; SSH and GPG keys --&gt; new SSH key</span><br></pre></td></tr></table></figure>
+
+<h4 id="回到上一步，完成repo配置，通过hexo三部曲-清理旧内容，生成新内容，部署新内容-完成文件上传"><a href="#回到上一步，完成repo配置，通过hexo三部曲-清理旧内容，生成新内容，部署新内容-完成文件上传" class="headerlink" title="回到上一步，完成repo配置，通过hexo三部曲(清理旧内容，生成新内容，部署新内容)完成文件上传"></a>回到上一步，完成repo配置，通过hexo三部曲(清理旧内容，生成新内容，部署新内容)完成文件上传</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<h6 id="报错err-Error-Spawn-failed"><a href="#报错err-Error-Spawn-failed" class="headerlink" title="报错err: Error: Spawn failed"></a>报错err: Error: Spawn failed</h6><p>出现在使用https链接时报错，改用SSH链接</p>
+
       
     </div>
 
