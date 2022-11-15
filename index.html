@@ -173,8 +173,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2022-11-15 16:56:34" itemprop="dateCreated datePublished" datetime="2022-11-15T16:56:34+08:00">2022-11-15</time>
+              <time title="Created: 2022-11-15 16:56:34 / Modified: 17:05:31" itemprop="dateCreated datePublished" datetime="2022-11-15T16:56:34+08:00">2022-11-15</time>
             </span>
 
           
@@ -188,7 +189,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <h3 id="hexo-image">hexo-image</h3>
+<ol>
+<li></li>
+</ol>
+
       
     </div>
 
@@ -306,7 +311,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-11-15 11:16:25 / Modified: 17:03:20" itemprop="dateCreated datePublished" datetime="2022-11-15T11:16:25+08:00">2022-11-15</time>
+              <time title="Created: 2022-11-15 11:16:25 / Modified: 17:13:16" itemprop="dateCreated datePublished" datetime="2022-11-15T11:16:25+08:00">2022-11-15</time>
             </span>
 
           
@@ -336,17 +341,18 @@
 <h4 id="d-使用nvm进行版本管理">d.使用nvm进行版本管理</h4>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm use --version</span><br></pre></td></tr></table></figure>
 <h2 id="2-安装hexo-cli">2.安装hexo-cli</h2>
-<p><strong>切换npm镜像源使用cnpm进行软件包的下载</strong></p>
+<h4 id="a-切换npm镜像源使用cnpm进行软件包的下载"><strong>a.切换npm镜像源使用cnpm进行软件包的下载</strong></h4>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
 <h2 id="3-hexo-init">3.hexo init</h2>
-<h4 id="关键步骤：初始化hexo"><strong>关键步骤：初始化hexo</strong></h4>
-<h6 id="a-报错WARN-git-clone-failed-Copying-data-instead">a.报错WARN git clone failed. Copying data instead</h6>
+<h4 id="a-关键步骤：初始化hexo"><strong>a.关键步骤：初始化hexo</strong></h4>
+<h6 id="a1-报错WARN-git-clone-failed-Copying-data-instead">a1.报错WARN git clone failed. Copying data instead</h6>
 <p>网络连接问题，重新尝试或者挂梯子，或者把github改成gitee，或者可以尝试手动复制在通过cnpm install下载依赖</p>
-<h6 id="b-报错端口占用">b.报错端口占用</h6>
+<h6 id="a2-报错端口占用">a2.报错端口占用</h6>
 <p>通过执行命令：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server -p 4321 </span><br></pre></td></tr></table></figure>
 <p>修改成一个可用的端口即可，当前网站部署在http://localhost:4321 处（注意：是临时改变）。</p>
 <h2 id="4-新建文档">4.新建文档</h2>
+<h4 id="a-hexo常用命令">a.hexo常用命令</h4>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n &#x27;new file name&#x27;  </span><br><span class="line">hexo server #hexo server -p &#x27;port&#x27;</span><br><span class="line">hexo generate #hexo g</span><br><span class="line">hexo deploy #hexo d</span><br></pre></td></tr></table></figure>
 <h2 id="5-远程部署到github">5.远程部署到github</h2>
 <h4 id="a-新建repository-命名">a.<strong>新建repository,命名:</strong></h4>
@@ -358,8 +364,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;</span><br><span class="line">git config --global user.email  &quot;github-email&quot;</span><br></pre></td></tr></table></figure>
 <h6 id="c2-查看SSH-Key是否存在，路径为">c2.查看SSH Key是否存在，路径为:</h6>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\&#x27;username&#x27;\.ssh</span><br></pre></td></tr></table></figure>
-<h6 id="如果其中存在id-rsa和对应的公钥id-rsa-pub-则说明已经生成；">如果其中存在id_rsa和对应的公钥id_rsa.pub,则说明已经生成；</h6>
-<h6 id="如果未生成，使用命令：">如果未生成，使用命令：</h6>
+<p>如果其中存在id_rsa和对应的公钥id_rsa.pub,则说明已经生成；如果未生成，使用命令：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;github-email&quot;</span><br></pre></td></tr></table></figure>
 <h6 id="c3-将生成的公钥文件上传到github">c3.将生成的公钥文件上传到github</h6>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setting--&gt; SSH and GPG keys --&gt; new SSH key</span><br></pre></td></tr></table></figure>
