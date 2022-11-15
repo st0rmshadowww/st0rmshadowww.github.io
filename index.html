@@ -150,6 +150,63 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/15/hexo-image/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="El Cid">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/15/hexo-image/" class="post-title-link" itemprop="url">hexo-image</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-15 16:56:34" itemprop="dateCreated datePublished" datetime="2022-11-15T16:56:34+08:00">2022-11-15</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/15/hexo-decorate/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -249,7 +306,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-11-15 11:16:25 / Modified: 14:47:07" itemprop="dateCreated datePublished" datetime="2022-11-15T11:16:25+08:00">2022-11-15</time>
+              <time title="Created: 2022-11-15 11:16:25 / Modified: 17:03:20" itemprop="dateCreated datePublished" datetime="2022-11-15T11:16:25+08:00">2022-11-15</time>
             </span>
 
           
@@ -263,50 +320,52 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="1-安装node-js">1.安装node.js</h3>
-<h4 id="最好通过nvm来完成不同版本的兼容与管理">最好通过nvm来完成不同版本的兼容与管理</h4>
+          <h2 id="1-安装node-js">1.安装node.js</h2>
+<p><strong>最好通过nvm来完成不同版本的兼容与管理</strong></p>
 <p>比如gulp v3.9使用的node版本号需要小于等于v12；</p>
 <p>而gulp v4.0+使用的node版本号需要大于v12；</p>
 <p>可以通过nvm命令实现node版本的切换</p>
-<h6 id="a-检查当前node的版本号（版本前带星号的就是当前使用的node版本）">a.检查当前node的版本号（版本前带星号的就是当前使用的node版本）</h6>
+<h4 id="a-检查当前node的版本号（版本前带星号的就是当前使用的node版本）">a.检查当前node的版本号（版本前带星号的就是当前使用的node版本）</h4>
 <p>所有的node版本会保留在nvm的文件夹中</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm list</span><br></pre></td></tr></table></figure>
 <p><img src="/2022/11/15/hexo-deploy/nvm_list.png" alt="nvm_list"></p>
-<h6 id="b-寻找可以下载的node版本号">b.寻找可以下载的node版本号</h6>
+<h4 id="b-寻找可以下载的node版本号">b.寻找可以下载的node版本号</h4>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm list available</span><br></pre></td></tr></table></figure>
-<h6 id="c-检查当前npm的版本号">c.检查当前npm的版本号</h6>
+<h4 id="c-检查当前npm的版本号">c.检查当前npm的版本号</h4>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install --version</span><br></pre></td></tr></table></figure>
-<h6 id="d-使用nvm进行版本管理">d.使用nvm进行版本管理</h6>
+<h4 id="d-使用nvm进行版本管理">d.使用nvm进行版本管理</h4>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm use --version</span><br></pre></td></tr></table></figure>
-<h3 id="2-安装hexo-cli">2.安装hexo-cli</h3>
-<h4 id="切换npm镜像源使用cnpm进行软件包的下载">切换npm镜像源使用cnpm进行软件包的下载</h4>
+<h2 id="2-安装hexo-cli">2.安装hexo-cli</h2>
+<p><strong>切换npm镜像源使用cnpm进行软件包的下载</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<h3 id="3-hexo-init">3.hexo init</h3>
-<h4 id="关键步骤：初始化hexo">关键步骤：初始化hexo</h4>
+<h2 id="3-hexo-init">3.hexo init</h2>
+<h4 id="关键步骤：初始化hexo"><strong>关键步骤：初始化hexo</strong></h4>
 <h6 id="a-报错WARN-git-clone-failed-Copying-data-instead">a.报错WARN git clone failed. Copying data instead</h6>
 <p>网络连接问题，重新尝试或者挂梯子，或者把github改成gitee，或者可以尝试手动复制在通过cnpm install下载依赖</p>
 <h6 id="b-报错端口占用">b.报错端口占用</h6>
-<p>执行hexo server -p 4321 修改成一个可用的端口即可，当前网站部署在http://localhost:4321 处。（临时改变）</p>
-<h3 id="4-新建文档">4.新建文档</h3>
+<p>通过执行命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server -p 4321 </span><br></pre></td></tr></table></figure>
+<p>修改成一个可用的端口即可，当前网站部署在http://localhost:4321 处（注意：是临时改变）。</p>
+<h2 id="4-新建文档">4.新建文档</h2>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n &#x27;new file name&#x27;  </span><br><span class="line">hexo server #hexo server -p &#x27;port&#x27;</span><br><span class="line">hexo generate #hexo g</span><br><span class="line">hexo deploy #hexo d</span><br></pre></td></tr></table></figure>
-<h3 id="5-远程部署到github">5.远程部署到github</h3>
-<h4 id="新建repository-命名">新建repository,命名:</h4>
+<h2 id="5-远程部署到github">5.远程部署到github</h2>
+<h4 id="a-新建repository-命名">a.<strong>新建repository,命名:</strong></h4>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;st0rmshadowww.github.io&#x27;</span><br></pre></td></tr></table></figure>
-<h4 id="修改-config-yml配置">修改_config.yml配置</h4>
+<h4 id="b-修改-config-yml配置">b.修改_config.yml配置</h4>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:st0rmshadowww/st0rmshadowww.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-<h4 id="repo的配置来自github仓库中的Quick-setup中的链接，可以使用HTTPS也可以使用SSH，使用SSH的话需要生成非对称密钥，步骤如下：">repo的配置来自github仓库中的Quick setup中的链接，可以使用HTTPS也可以使用SSH，使用SSH的话需要生成非对称密钥，步骤如下：</h4>
-<h6 id="a-初始化配置">a.初始化配置</h6>
+<h4 id="c-repo的配置来自github仓库中的Quick-setup中的链接，可以使用HTTPS也可以使用SSH，使用SSH的话需要生成非对称密钥，步骤如下：">c.repo的配置来自github仓库中的Quick setup中的链接，可以使用HTTPS也可以使用SSH，使用SSH的话需要生成非对称密钥，步骤如下：</h4>
+<h6 id="c1-初始化配置">c1.初始化配置</h6>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;</span><br><span class="line">git config --global user.email  &quot;github-email&quot;</span><br></pre></td></tr></table></figure>
-<h6 id="b-查看SSH-Key是否存在，路径为">b.查看SSH Key是否存在，路径为:</h6>
+<h6 id="c2-查看SSH-Key是否存在，路径为">c2.查看SSH Key是否存在，路径为:</h6>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\&#x27;username&#x27;\.ssh</span><br></pre></td></tr></table></figure>
 <h6 id="如果其中存在id-rsa和对应的公钥id-rsa-pub-则说明已经生成；">如果其中存在id_rsa和对应的公钥id_rsa.pub,则说明已经生成；</h6>
 <h6 id="如果未生成，使用命令：">如果未生成，使用命令：</h6>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;github-email&quot;</span><br></pre></td></tr></table></figure>
-<h6 id="c-将生成的公钥文件上传到github">c.将生成的公钥文件上传到github</h6>
+<h6 id="c3-将生成的公钥文件上传到github">c3.将生成的公钥文件上传到github</h6>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setting--&gt; SSH and GPG keys --&gt; new SSH key</span><br></pre></td></tr></table></figure>
-<h4 id="回到上一步，完成repo配置，通过hexo三部曲-清理旧内容，生成新内容，部署新内容-完成文件上传">回到上一步，完成repo配置，通过hexo三部曲(清理旧内容，生成新内容，部署新内容)完成文件上传</h4>
+<h4 id="d-完成repo配置，通过hexo三部曲-清理旧内容，生成新内容，部署新内容-完成文件上传">d.完成repo配置，通过hexo三部曲(清理旧内容，生成新内容，部署新内容)完成文件上传</h4>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<h6 id="报错err-Error-Spawn-failed">报错err: Error: Spawn failed</h6>
+<h6 id="d1-报错err-Error-Spawn-failed">d1.报错err: Error: Spawn failed</h6>
 <p>出现在使用https链接时报错，改用SSH链接</p>
 
       
@@ -467,7 +526,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

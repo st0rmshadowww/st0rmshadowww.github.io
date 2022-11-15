@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2022/11/15/hexo-deploy/nvm_list.png">
 <meta property="article:published_time" content="2022-11-15T03:16:25.000Z">
-<meta property="article:modified_time" content="2022-11-15T06:47:07.118Z">
+<meta property="article:modified_time" content="2022-11-15T09:03:20.843Z">
 <meta property="article:author" content="El Cid">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2022/11/15/hexo-deploy/nvm_list.png">
@@ -181,7 +181,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-11-15 11:16:25 / Modified: 14:47:07" itemprop="dateCreated datePublished" datetime="2022-11-15T11:16:25+08:00">2022-11-15</time>
+              <time title="Created: 2022-11-15 11:16:25 / Modified: 17:03:20" itemprop="dateCreated datePublished" datetime="2022-11-15T11:16:25+08:00">2022-11-15</time>
             </span>
 
           
@@ -195,50 +195,52 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="1-安装node-js">1.安装node.js</h3>
-<h4 id="最好通过nvm来完成不同版本的兼容与管理">最好通过nvm来完成不同版本的兼容与管理</h4>
+        <h2 id="1-安装node-js">1.安装node.js</h2>
+<p><strong>最好通过nvm来完成不同版本的兼容与管理</strong></p>
 <p>比如gulp v3.9使用的node版本号需要小于等于v12；</p>
 <p>而gulp v4.0+使用的node版本号需要大于v12；</p>
 <p>可以通过nvm命令实现node版本的切换</p>
-<h6 id="a-检查当前node的版本号（版本前带星号的就是当前使用的node版本）">a.检查当前node的版本号（版本前带星号的就是当前使用的node版本）</h6>
+<h4 id="a-检查当前node的版本号（版本前带星号的就是当前使用的node版本）">a.检查当前node的版本号（版本前带星号的就是当前使用的node版本）</h4>
 <p>所有的node版本会保留在nvm的文件夹中</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm list</span><br></pre></td></tr></table></figure>
 <p><img src="/2022/11/15/hexo-deploy/nvm_list.png" alt="nvm_list"></p>
-<h6 id="b-寻找可以下载的node版本号">b.寻找可以下载的node版本号</h6>
+<h4 id="b-寻找可以下载的node版本号">b.寻找可以下载的node版本号</h4>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm list available</span><br></pre></td></tr></table></figure>
-<h6 id="c-检查当前npm的版本号">c.检查当前npm的版本号</h6>
+<h4 id="c-检查当前npm的版本号">c.检查当前npm的版本号</h4>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install --version</span><br></pre></td></tr></table></figure>
-<h6 id="d-使用nvm进行版本管理">d.使用nvm进行版本管理</h6>
+<h4 id="d-使用nvm进行版本管理">d.使用nvm进行版本管理</h4>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm use --version</span><br></pre></td></tr></table></figure>
-<h3 id="2-安装hexo-cli">2.安装hexo-cli</h3>
-<h4 id="切换npm镜像源使用cnpm进行软件包的下载">切换npm镜像源使用cnpm进行软件包的下载</h4>
+<h2 id="2-安装hexo-cli">2.安装hexo-cli</h2>
+<p><strong>切换npm镜像源使用cnpm进行软件包的下载</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<h3 id="3-hexo-init">3.hexo init</h3>
-<h4 id="关键步骤：初始化hexo">关键步骤：初始化hexo</h4>
+<h2 id="3-hexo-init">3.hexo init</h2>
+<h4 id="关键步骤：初始化hexo"><strong>关键步骤：初始化hexo</strong></h4>
 <h6 id="a-报错WARN-git-clone-failed-Copying-data-instead">a.报错WARN git clone failed. Copying data instead</h6>
 <p>网络连接问题，重新尝试或者挂梯子，或者把github改成gitee，或者可以尝试手动复制在通过cnpm install下载依赖</p>
 <h6 id="b-报错端口占用">b.报错端口占用</h6>
-<p>执行hexo server -p 4321 修改成一个可用的端口即可，当前网站部署在http://localhost:4321 处。（临时改变）</p>
-<h3 id="4-新建文档">4.新建文档</h3>
+<p>通过执行命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server -p 4321 </span><br></pre></td></tr></table></figure>
+<p>修改成一个可用的端口即可，当前网站部署在http://localhost:4321 处（注意：是临时改变）。</p>
+<h2 id="4-新建文档">4.新建文档</h2>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n &#x27;new file name&#x27;  </span><br><span class="line">hexo server #hexo server -p &#x27;port&#x27;</span><br><span class="line">hexo generate #hexo g</span><br><span class="line">hexo deploy #hexo d</span><br></pre></td></tr></table></figure>
-<h3 id="5-远程部署到github">5.远程部署到github</h3>
-<h4 id="新建repository-命名">新建repository,命名:</h4>
+<h2 id="5-远程部署到github">5.远程部署到github</h2>
+<h4 id="a-新建repository-命名">a.<strong>新建repository,命名:</strong></h4>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;st0rmshadowww.github.io&#x27;</span><br></pre></td></tr></table></figure>
-<h4 id="修改-config-yml配置">修改_config.yml配置</h4>
+<h4 id="b-修改-config-yml配置">b.修改_config.yml配置</h4>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:st0rmshadowww/st0rmshadowww.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-<h4 id="repo的配置来自github仓库中的Quick-setup中的链接，可以使用HTTPS也可以使用SSH，使用SSH的话需要生成非对称密钥，步骤如下：">repo的配置来自github仓库中的Quick setup中的链接，可以使用HTTPS也可以使用SSH，使用SSH的话需要生成非对称密钥，步骤如下：</h4>
-<h6 id="a-初始化配置">a.初始化配置</h6>
+<h4 id="c-repo的配置来自github仓库中的Quick-setup中的链接，可以使用HTTPS也可以使用SSH，使用SSH的话需要生成非对称密钥，步骤如下：">c.repo的配置来自github仓库中的Quick setup中的链接，可以使用HTTPS也可以使用SSH，使用SSH的话需要生成非对称密钥，步骤如下：</h4>
+<h6 id="c1-初始化配置">c1.初始化配置</h6>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;</span><br><span class="line">git config --global user.email  &quot;github-email&quot;</span><br></pre></td></tr></table></figure>
-<h6 id="b-查看SSH-Key是否存在，路径为">b.查看SSH Key是否存在，路径为:</h6>
+<h6 id="c2-查看SSH-Key是否存在，路径为">c2.查看SSH Key是否存在，路径为:</h6>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\&#x27;username&#x27;\.ssh</span><br></pre></td></tr></table></figure>
 <h6 id="如果其中存在id-rsa和对应的公钥id-rsa-pub-则说明已经生成；">如果其中存在id_rsa和对应的公钥id_rsa.pub,则说明已经生成；</h6>
 <h6 id="如果未生成，使用命令：">如果未生成，使用命令：</h6>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;github-email&quot;</span><br></pre></td></tr></table></figure>
-<h6 id="c-将生成的公钥文件上传到github">c.将生成的公钥文件上传到github</h6>
+<h6 id="c3-将生成的公钥文件上传到github">c3.将生成的公钥文件上传到github</h6>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setting--&gt; SSH and GPG keys --&gt; new SSH key</span><br></pre></td></tr></table></figure>
-<h4 id="回到上一步，完成repo配置，通过hexo三部曲-清理旧内容，生成新内容，部署新内容-完成文件上传">回到上一步，完成repo配置，通过hexo三部曲(清理旧内容，生成新内容，部署新内容)完成文件上传</h4>
+<h4 id="d-完成repo配置，通过hexo三部曲-清理旧内容，生成新内容，部署新内容-完成文件上传">d.完成repo配置，通过hexo三部曲(清理旧内容，生成新内容，部署新内容)完成文件上传</h4>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<h6 id="报错err-Error-Spawn-failed">报错err: Error: Spawn failed</h6>
+<h6 id="d1-报错err-Error-Spawn-failed">d1.报错err: Error: Spawn failed</h6>
 <p>出现在使用https链接时报错，改用SSH链接</p>
 
     </div>
@@ -320,7 +322,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85node-js"><span class="nav-number">1.</span> <span class="nav-text">1.安装node.js</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E5%A5%BD%E9%80%9A%E8%BF%87nvm%E6%9D%A5%E5%AE%8C%E6%88%90%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E5%85%BC%E5%AE%B9%E4%B8%8E%E7%AE%A1%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">最好通过nvm来完成不同版本的兼容与管理</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#a-%E6%A3%80%E6%9F%A5%E5%BD%93%E5%89%8Dnode%E7%9A%84%E7%89%88%E6%9C%AC%E5%8F%B7%EF%BC%88%E7%89%88%E6%9C%AC%E5%89%8D%E5%B8%A6%E6%98%9F%E5%8F%B7%E7%9A%84%E5%B0%B1%E6%98%AF%E5%BD%93%E5%89%8D%E4%BD%BF%E7%94%A8%E7%9A%84node%E7%89%88%E6%9C%AC%EF%BC%89"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">a.检查当前node的版本号（版本前带星号的就是当前使用的node版本）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#b-%E5%AF%BB%E6%89%BE%E5%8F%AF%E4%BB%A5%E4%B8%8B%E8%BD%BD%E7%9A%84node%E7%89%88%E6%9C%AC%E5%8F%B7"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">b.寻找可以下载的node版本号</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#c-%E6%A3%80%E6%9F%A5%E5%BD%93%E5%89%8Dnpm%E7%9A%84%E7%89%88%E6%9C%AC%E5%8F%B7"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">c.检查当前npm的版本号</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#d-%E4%BD%BF%E7%94%A8nvm%E8%BF%9B%E8%A1%8C%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">d.使用nvm进行版本管理</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85hexo-cli"><span class="nav-number">2.</span> <span class="nav-text">2.安装hexo-cli</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%87%E6%8D%A2npm%E9%95%9C%E5%83%8F%E6%BA%90%E4%BD%BF%E7%94%A8cnpm%E8%BF%9B%E8%A1%8C%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%9A%84%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.1.</span> <span class="nav-text">切换npm镜像源使用cnpm进行软件包的下载</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-hexo-init"><span class="nav-number">3.</span> <span class="nav-text">3.hexo init</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E6%AD%A5%E9%AA%A4%EF%BC%9A%E5%88%9D%E5%A7%8B%E5%8C%96hexo"><span class="nav-number">3.1.</span> <span class="nav-text">关键步骤：初始化hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#a-%E6%8A%A5%E9%94%99WARN-git-clone-failed-Copying-data-instead"><span class="nav-number">3.1.0.1.</span> <span class="nav-text">a.报错WARN git clone failed. Copying data instead</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#b-%E6%8A%A5%E9%94%99%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8"><span class="nav-number">3.1.0.2.</span> <span class="nav-text">b.报错端口占用</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3"><span class="nav-number">4.</span> <span class="nav-text">4.新建文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E8%BF%9C%E7%A8%8B%E9%83%A8%E7%BD%B2%E5%88%B0github"><span class="nav-number">5.</span> <span class="nav-text">5.远程部署到github</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E5%BB%BArepository-%E5%91%BD%E5%90%8D"><span class="nav-number">5.1.</span> <span class="nav-text">新建repository,命名:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-config-yml%E9%85%8D%E7%BD%AE"><span class="nav-number">5.2.</span> <span class="nav-text">修改_config.yml配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#repo%E7%9A%84%E9%85%8D%E7%BD%AE%E6%9D%A5%E8%87%AAgithub%E4%BB%93%E5%BA%93%E4%B8%AD%E7%9A%84Quick-setup%E4%B8%AD%E7%9A%84%E9%93%BE%E6%8E%A5%EF%BC%8C%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8HTTPS%E4%B9%9F%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8SSH%EF%BC%8C%E4%BD%BF%E7%94%A8SSH%E7%9A%84%E8%AF%9D%E9%9C%80%E8%A6%81%E7%94%9F%E6%88%90%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%AF%86%E9%92%A5%EF%BC%8C%E6%AD%A5%E9%AA%A4%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-number">5.3.</span> <span class="nav-text">repo的配置来自github仓库中的Quick setup中的链接，可以使用HTTPS也可以使用SSH，使用SSH的话需要生成非对称密钥，步骤如下：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#a-%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE"><span class="nav-number">5.3.0.1.</span> <span class="nav-text">a.初始化配置</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#b-%E6%9F%A5%E7%9C%8BSSH-Key%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%EF%BC%8C%E8%B7%AF%E5%BE%84%E4%B8%BA"><span class="nav-number">5.3.0.2.</span> <span class="nav-text">b.查看SSH Key是否存在，路径为:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E5%85%B6%E4%B8%AD%E5%AD%98%E5%9C%A8id-rsa%E5%92%8C%E5%AF%B9%E5%BA%94%E7%9A%84%E5%85%AC%E9%92%A5id-rsa-pub-%E5%88%99%E8%AF%B4%E6%98%8E%E5%B7%B2%E7%BB%8F%E7%94%9F%E6%88%90%EF%BC%9B"><span class="nav-number">5.3.0.3.</span> <span class="nav-text">如果其中存在id_rsa和对应的公钥id_rsa.pub,则说明已经生成；</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E6%9C%AA%E7%94%9F%E6%88%90%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="nav-number">5.3.0.4.</span> <span class="nav-text">如果未生成，使用命令：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#c-%E5%B0%86%E7%94%9F%E6%88%90%E7%9A%84%E5%85%AC%E9%92%A5%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0github"><span class="nav-number">5.3.0.5.</span> <span class="nav-text">c.将生成的公钥文件上传到github</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9E%E5%88%B0%E4%B8%8A%E4%B8%80%E6%AD%A5%EF%BC%8C%E5%AE%8C%E6%88%90repo%E9%85%8D%E7%BD%AE%EF%BC%8C%E9%80%9A%E8%BF%87hexo%E4%B8%89%E9%83%A8%E6%9B%B2-%E6%B8%85%E7%90%86%E6%97%A7%E5%86%85%E5%AE%B9%EF%BC%8C%E7%94%9F%E6%88%90%E6%96%B0%E5%86%85%E5%AE%B9%EF%BC%8C%E9%83%A8%E7%BD%B2%E6%96%B0%E5%86%85%E5%AE%B9-%E5%AE%8C%E6%88%90%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="nav-number">5.4.</span> <span class="nav-text">回到上一步，完成repo配置，通过hexo三部曲(清理旧内容，生成新内容，部署新内容)完成文件上传</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%8A%A5%E9%94%99err-Error-Spawn-failed"><span class="nav-number">5.4.0.1.</span> <span class="nav-text">报错err: Error: Spawn failed</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85node-js"><span class="nav-number">1.</span> <span class="nav-text">1.安装node.js</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-%E6%A3%80%E6%9F%A5%E5%BD%93%E5%89%8Dnode%E7%9A%84%E7%89%88%E6%9C%AC%E5%8F%B7%EF%BC%88%E7%89%88%E6%9C%AC%E5%89%8D%E5%B8%A6%E6%98%9F%E5%8F%B7%E7%9A%84%E5%B0%B1%E6%98%AF%E5%BD%93%E5%89%8D%E4%BD%BF%E7%94%A8%E7%9A%84node%E7%89%88%E6%9C%AC%EF%BC%89"><span class="nav-number">1.0.1.</span> <span class="nav-text">a.检查当前node的版本号（版本前带星号的就是当前使用的node版本）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-%E5%AF%BB%E6%89%BE%E5%8F%AF%E4%BB%A5%E4%B8%8B%E8%BD%BD%E7%9A%84node%E7%89%88%E6%9C%AC%E5%8F%B7"><span class="nav-number">1.0.2.</span> <span class="nav-text">b.寻找可以下载的node版本号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-%E6%A3%80%E6%9F%A5%E5%BD%93%E5%89%8Dnpm%E7%9A%84%E7%89%88%E6%9C%AC%E5%8F%B7"><span class="nav-number">1.0.3.</span> <span class="nav-text">c.检查当前npm的版本号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-%E4%BD%BF%E7%94%A8nvm%E8%BF%9B%E8%A1%8C%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86"><span class="nav-number">1.0.4.</span> <span class="nav-text">d.使用nvm进行版本管理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85hexo-cli"><span class="nav-number">2.</span> <span class="nav-text">2.安装hexo-cli</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-hexo-init"><span class="nav-number">3.</span> <span class="nav-text">3.hexo init</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E6%AD%A5%E9%AA%A4%EF%BC%9A%E5%88%9D%E5%A7%8B%E5%8C%96hexo"><span class="nav-number">3.0.1.</span> <span class="nav-text">关键步骤：初始化hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#a-%E6%8A%A5%E9%94%99WARN-git-clone-failed-Copying-data-instead"><span class="nav-number">3.0.1.0.1.</span> <span class="nav-text">a.报错WARN git clone failed. Copying data instead</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#b-%E6%8A%A5%E9%94%99%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8"><span class="nav-number">3.0.1.0.2.</span> <span class="nav-text">b.报错端口占用</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3"><span class="nav-number">4.</span> <span class="nav-text">4.新建文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E8%BF%9C%E7%A8%8B%E9%83%A8%E7%BD%B2%E5%88%B0github"><span class="nav-number">5.</span> <span class="nav-text">5.远程部署到github</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-%E6%96%B0%E5%BB%BArepository-%E5%91%BD%E5%90%8D"><span class="nav-number">5.0.1.</span> <span class="nav-text">a.新建repository,命名:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-%E4%BF%AE%E6%94%B9-config-yml%E9%85%8D%E7%BD%AE"><span class="nav-number">5.0.2.</span> <span class="nav-text">b.修改_config.yml配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-repo%E7%9A%84%E9%85%8D%E7%BD%AE%E6%9D%A5%E8%87%AAgithub%E4%BB%93%E5%BA%93%E4%B8%AD%E7%9A%84Quick-setup%E4%B8%AD%E7%9A%84%E9%93%BE%E6%8E%A5%EF%BC%8C%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8HTTPS%E4%B9%9F%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8SSH%EF%BC%8C%E4%BD%BF%E7%94%A8SSH%E7%9A%84%E8%AF%9D%E9%9C%80%E8%A6%81%E7%94%9F%E6%88%90%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%AF%86%E9%92%A5%EF%BC%8C%E6%AD%A5%E9%AA%A4%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-number">5.0.3.</span> <span class="nav-text">c.repo的配置来自github仓库中的Quick setup中的链接，可以使用HTTPS也可以使用SSH，使用SSH的话需要生成非对称密钥，步骤如下：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#c1-%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE"><span class="nav-number">5.0.3.0.1.</span> <span class="nav-text">c1.初始化配置</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#c2-%E6%9F%A5%E7%9C%8BSSH-Key%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%EF%BC%8C%E8%B7%AF%E5%BE%84%E4%B8%BA"><span class="nav-number">5.0.3.0.2.</span> <span class="nav-text">c2.查看SSH Key是否存在，路径为:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E5%85%B6%E4%B8%AD%E5%AD%98%E5%9C%A8id-rsa%E5%92%8C%E5%AF%B9%E5%BA%94%E7%9A%84%E5%85%AC%E9%92%A5id-rsa-pub-%E5%88%99%E8%AF%B4%E6%98%8E%E5%B7%B2%E7%BB%8F%E7%94%9F%E6%88%90%EF%BC%9B"><span class="nav-number">5.0.3.0.3.</span> <span class="nav-text">如果其中存在id_rsa和对应的公钥id_rsa.pub,则说明已经生成；</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E6%9C%AA%E7%94%9F%E6%88%90%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="nav-number">5.0.3.0.4.</span> <span class="nav-text">如果未生成，使用命令：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#c3-%E5%B0%86%E7%94%9F%E6%88%90%E7%9A%84%E5%85%AC%E9%92%A5%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0github"><span class="nav-number">5.0.3.0.5.</span> <span class="nav-text">c3.将生成的公钥文件上传到github</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-%E5%AE%8C%E6%88%90repo%E9%85%8D%E7%BD%AE%EF%BC%8C%E9%80%9A%E8%BF%87hexo%E4%B8%89%E9%83%A8%E6%9B%B2-%E6%B8%85%E7%90%86%E6%97%A7%E5%86%85%E5%AE%B9%EF%BC%8C%E7%94%9F%E6%88%90%E6%96%B0%E5%86%85%E5%AE%B9%EF%BC%8C%E9%83%A8%E7%BD%B2%E6%96%B0%E5%86%85%E5%AE%B9-%E5%AE%8C%E6%88%90%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="nav-number">5.0.4.</span> <span class="nav-text">d.完成repo配置，通过hexo三部曲(清理旧内容，生成新内容，部署新内容)完成文件上传</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#d1-%E6%8A%A5%E9%94%99err-Error-Spawn-failed"><span class="nav-number">5.0.4.0.1.</span> <span class="nav-text">d1.报错err: Error: Spawn failed</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -334,7 +336,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
